@@ -34,7 +34,7 @@ if (!isset($ecal_class))
 
 // See if the page is already in the cache
 $cache_tag = 'nq_event_cal_cal';
-if($cacheData = $e107->ecache->retrieve($cache_tag, $ecal_class->max_cache_time))
+if($cacheData = e107::getCache()->retrieve($cache_tag, $ecal_class->max_cache_time))
 {
 	echo $cacheData;
 	return;
@@ -225,7 +225,7 @@ $cal_text .= $CALENDAR_MENU_END;
 ob_start();					// Set up a new output buffer
 e107::getRender()->tablerender($calendar_title, $cal_text, 'calendar_menu');
 $cache_data = ob_get_flush();			// Get the page content, and display it
-$e107->ecache->set($cache_tag, $cache_data);	// Save to cache
+e107::getCache()->set($cache_tag, $cache_data);	// Save to cache
 unset($ev_list);
 unset($cal_text);
 ?>
