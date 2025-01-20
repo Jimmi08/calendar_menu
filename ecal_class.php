@@ -37,9 +37,8 @@ if (!defined('e107_INIT')) { exit; }
 
 if (!defined('EC_DEFAULT_CATEGORY')) { define('EC_DEFAULT_CATEGORY','Default'); }
 
-include_lan(e_PLUGIN.'calendar_menu/languages/'.e_LANGUAGE.'_class.php');
-
-
+e107::lan('calendar_menu', e_LANGUAGE, false); 
+ 
 /**
  *	Class of useful data and functions for the event calendar plugin
  *	Included in all application files

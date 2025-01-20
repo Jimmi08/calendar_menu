@@ -40,7 +40,7 @@ if($cacheData = $e107->ecache->retrieve($cache_tag, $ecal_class->max_cache_time)
 }
 
 
-include_lan(e_PLUGIN.'calendar_menu/languages/'.e_LANGUAGE.'.php');
+e107::lan('calendar_menu', e_LANGUAGE, false); 
 
 require_once(e_PLUGIN.'calendar_menu/calendar_shortcodes.php');
 $calSc = new event_calendar_shortcodes();

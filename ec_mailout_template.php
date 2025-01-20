@@ -34,7 +34,7 @@ Language constants should be in the English_mailer.php file
 
 if (!defined('e107_INIT')) { exit; }
 
-include_lan(e_PLUGIN.'calendar_menu/languages/'.e_LANGUAGE.'_mailer.php');
+e107::lan('calendar_menu', 'mailer', true);  	
 
 global $sc_style;
 

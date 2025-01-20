@@ -27,9 +27,10 @@ if (!getperms('P'))
   header('location:'.e_BASE.'index.php');
   exit;
 }
-	
-	
-include_lan(e_PLUGIN.'calendar_menu/languages/'.e_LANGUAGE.'_admin_calendar_menu.php');
+
+e107::lan('calendar_menu', 'admin_calendar_menu', true);
+e107::lan('calendar_menu', 'log', true);  	
+
 
 $frm = e107::getForm();
 $mes = e107::getMessage();

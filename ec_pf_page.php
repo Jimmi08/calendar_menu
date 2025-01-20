@@ -42,7 +42,7 @@ $e107 = e107::getInstance();
 $tp = e107::getParser();
 
 if (!$e107->isInstalled('calendar_menu')) header('Location: '.e_BASE.'index.php');
-include_lan(e_PLUGIN.'calendar_menu/languages/'.e_LANGUAGE.'.php');
+e107::lan('calendar_menu', e_LANGUAGE, false); 
 define('PAGE_NAME', EC_LAN_80);
 
 require_once(e_PLUGIN.'calendar_menu/ecal_class.php');
@@ -341,7 +341,7 @@ switch($ec_output_type)
 	
 	case 'pdf':
 		//TODO find a way to pass initialisation options etc to PDF driver
-		//include_lan(e_PLUGIN.'pdf/languages/'.e_LANGUAGE.'_admin_pdf.php'); - shouldn't be needed
+		//include_xlan(e_PLUGIN.'pdf/languages/'.e_LANGUAGE.'_admin_pdf.php'); - shouldn't be needed
 		require_once (e_PLUGIN.'pdf/e107pdf.php');
 		$pdf = new e107PDF();
 		//	$text = array($text, $creator, $author, $title, $subject, $keywords, $url);
